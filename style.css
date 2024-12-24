@@ -1,0 +1,197 @@
+/* Importing Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Body Styling */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #f0f0f0;
+    background: url('background_image.jpg') center/cover no-repeat fixed; /* Parallax effect */
+    background-size: cover;
+    height: 100%; /* Full height */
+    min-height: 100vh;
+    overflow-x: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* Main Content Container */
+.container {
+    background: rgba(25, 25, 25, 0.9); /* Dark background for contrast */
+    border-radius: 25px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.7); /* Dark shadow for depth */
+    width: 80%;
+    max-width: 800px;
+    margin: 20px;
+    padding: 40px 30px;
+    animation: slide-in 1.5s ease-out;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    transition: all 0.3s ease; /* Smooth transition for changes */
+}
+
+/* Heading Styling */
+h1 {
+    font-family: 'Poppins', sans-serif;
+    color: #3B82F6; /* Softer blue */
+    font-size: 4em;
+    margin-bottom: 30px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7), 0 0 25px #3B82F6, 0 0 5px #3B82F6; /* Soft blue glow */
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+/* Hover Effect for Heading */
+h1:hover {
+    color: #2563EB; /* Slightly darker shade of blue on hover */
+    transform: scale(1.05); /* Slight zoom-in effect */
+}
+
+/* Image Styling */
+.gif, .images img {
+    width: 100%;
+    max-width: 350px; /* Larger images */
+    border-radius: 10px;
+    margin: 20px 0;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Dark shadow */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect for Images */
+.gif:hover, .images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); /* Increase shadow on hover */
+}
+
+/* Image Section Styling */
+.images {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-bottom: 30px;
+}
+
+/* Message Styling */
+.message {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.4em;
+    line-height: 1.8;
+    color: #4B6A9F; /* Darker, slightly desaturated blue */
+    margin: 30px 0;
+    text-align: left;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5); /* Subtle text shadow for coolness */
+}
+
+/* Signature Styling */
+.signature {
+    display: block;
+    margin-top: 40px;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 1.4em;
+    color: #3B82F6; /* Softer blue */
+    letter-spacing: 1px;
+}
+
+/* Button Styling */
+button {
+    background: linear-gradient(45deg, #1e90ff, #00BFFF); /* Cool gradient */
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.3em;
+    font-weight: bold;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease, box-shadow 0.3s;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6); /* Dark shadow */
+    margin-top: 20px;
+}
+
+/* Hover Effect for Button */
+button:hover {
+    background: linear-gradient(45deg, #00BFFF, #1e90ff);
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); /* Increased shadow on hover */
+}
+
+/* Hidden Surprise Section */
+.hidden {
+    display: none; /* Hide initially */
+    margin-top: 30px;
+}
+
+/* Fade-in Effect for Surprise */
+.fade-in {
+    animation: fade-in 2s ease-in-out;
+}
+
+/* Slide-in Animation for Main Container */
+@keyframes slide-in {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Smooth Fade-in Effect for Surprise Message */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Updated Surprise Message Styling for Better Visibility */
+#surpriseMessage {
+    font-family: 'Poppins', sans-serif; /* Modern font */
+    font-size: 1.8em;
+    color: #3B82F6; /* Softer blue */
+    font-weight: 600; /* Bold weight */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Strong text shadow */
+    text-align: center;
+}
+
+/* Snowfall Effect */
+@keyframes snowfall {
+    from { top: -10%; }
+    to { top: 100%; }
+}
+
+.snowflakes {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1000;
+    pointer-events: none; /* Ensure it doesn't interfere with other elements */
+}
+
+.snowflake {
+    position: absolute;
+    color: white;
+    font-size: 1.5em;
+    z-index: 999;
+    animation: snowfall linear infinite;
+}
+
+.snowflake:nth-child(odd) {
+    animation-duration: 15s;
+}
+
+.snowflake:nth-child(even) {
+    animation-duration: 10s;
+}
